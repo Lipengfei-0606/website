@@ -1,7 +1,165 @@
-<html>
-<h1>欢迎来到我的网站</h1>
-  <body>
-    <p>联系方式：15221631586</p>
-    <p>邮箱：2997325767@qq.com</p>
-  </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李鹏飞的个人网页</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            color: #333;
+            animation: gradient 5s ease infinite;
+            background-size: 400% 400%;
+            overflow: hidden;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #3498db;
+        }
+        .about {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .skill {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+        .skill:hover {
+            background: #2980b9;
+        }
+        .contact {
+            margin-top: 20px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #3498db;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #2980b9;
+        }
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            background: rgba(52, 152, 219, 0.5);
+        }
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <img src="images/avatar.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>李鹏飞</h1>
+        <h2>算法工程师</h2>
+        <p>喜欢钻研和学习</p>
+
+        <div class="about">
+            <h3>关于我</h3>
+            <p>我是一名算法工程师，热爱钻研新技术和学习新知识。我的专业领域包括机器学习、数据分析和人工智能。我一直致力于通过算法优化和数据驱动的决策来解决复杂的问题。</p>
+        </div>
+
+        <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">Artificial Intelligence</div>
+            <div class="skill">Deep Learning</div>
+            <div class="skill">Algorithm Design</div>
+        </div>
+
+        <div class="contact">
+            <h3>联系方式</h3>
+            <p>邮箱: <a href="mailto:im.lipengfei@gmail.com">im.lipengfei@gmail.com</a></p>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            let ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            document.body.appendChild(ripple);
+
+            let size = 50;
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${e.clientX - size / 2}px`;
+            ripple.style.top = `${e.clientY - size / 2}px`;
+
+            ripple.addEventListener('animationend', () => {
+                ripple.remove();
+            });
+        });
+    </script>
+</body>
 </html>
